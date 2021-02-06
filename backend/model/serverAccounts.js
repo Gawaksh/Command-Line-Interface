@@ -6,7 +6,7 @@ let serverAccounts = new Schema({
   server_name: {
     type: String
   },
-  student_ip: {
+  server_ip: {
     type: String
   },
   server_password: {
