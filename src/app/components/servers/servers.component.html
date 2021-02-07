@@ -1,1 +1,54 @@
-<p>servers works!</p>
+<div class="container">
+  <form [formGroup]="serverForm" (ngSubmit)="onSubmit()">
+    <h3>Server Details</h3>
+
+    <label>
+      Name:
+      <input type="text" formControlName="server_name">
+      <span *ngIf="serverForm.controls.server_name.invalid && (serverForm.controls.server_name.dirty || serverForm.controls.server_name.touched)" class="error">
+        <span *ngIf="serverForm.controls.server_name.errors && serverForm.controls.server_name.errors.required">
+          Name is required.
+        </span>
+      </span>
+    </label>
+
+    <label>
+      Ip:
+      <input type="text" formControlName="server_ip">
+      <span *ngIf="serverForm.controls.server_ip.invalid && (serverForm.controls.server_ip.dirty || serverForm.controls.server_ip.touched)" class="error">
+        <span *ngIf="serverForm.controls.server_ip.errors && serverForm.controls.server_ip.errors.required">
+          Ip is required.
+        </span>
+      </span>
+    </label>
+
+    <label>
+      Password:
+      <input type="password" formControlName="server_password">
+      <span *ngIf="serverForm.controls.server_password.invalid && (serverForm.controls.server_password.dirty || serverForm.controls.server_password.touched)" class="error">
+        <span *ngIf="serverForm.controls.server_password.errors && serverForm.controls.server_password.errors.required">
+          Password is required.
+        </span>
+      </span>
+    </label>
+
+    <label>
+      Port:
+      <input type="text" formControlName="server_port">
+      <span *ngIf="serverForm.controls.server_port.invalid && (serverForm.controls.server_port.dirty || serverForm.controls.server_port.touched)" class="error">
+        <span *ngIf="serverForm.controls.server_port.errors && serverForm.controls.server_port.errors.required">
+          Port is required.
+        </span>
+      </span>
+    </label>
+    <button type="submit" [disabled]="!serverForm.valid">Submit</button>
+  </form>
+  <ag-grid-angular
+    style="width: 100vh; height: 60vh;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+>
+</ag-grid-angular>
+</div>

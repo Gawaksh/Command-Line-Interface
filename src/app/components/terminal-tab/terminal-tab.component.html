@@ -1,10 +1,10 @@
-<div (click)="$event.preventDefault()">
+<div class="container" (click)="$event.preventDefault()">
     <p>Change quantity of tabs by manipulating tabs array</p>
     <button type="button" class="btn btn-primary btn-sm" (click)="addNewTab()">
-      Add new tab
+      New Terminal
     </button>
     <button type="button" class="btn btn-primary btn-sm" (click)="tabs = []"  *ngIf="tabs.length">
-      Remove all tabs
+      Remove All Terminal
     </button>
   <hr/>
   <tabset>
